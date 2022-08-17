@@ -66,11 +66,14 @@ function renderMarkup(countries) {
     }
 
     if (countries.length >= 2 && countries.length <= 10) {
-        refs.countryList.innerHTML = makeMarkupOfListEl(countries);       
+        refs.countryList.innerHTML = makeMarkupOfListEl(countries);
+        refs.countryWrap.innerHTML = " ";
     }
 
     if (countries.length > 10) {
         Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
+        refs.countryList.innerHTML = " ";
+        refs.countryWrap.innerHTML = " ";
     }
 
 }
